@@ -1,0 +1,7 @@
+{
+    "require": {
+        "php-activerecord/php-activerecord": "dev-master",
+        "slim/slim": "2.*",
+        "twitter/bootstrap": "dev-templated-customizer"
+    }
+}

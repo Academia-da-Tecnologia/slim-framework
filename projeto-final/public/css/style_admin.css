@@ -1,0 +1,14 @@
+*{margin:0;padding:0;font-family: 'News Cycle';}
+#container{width:800px;margin: 0 auto;font-family: 'News Cycle';}
+h1,h2,h3,h4{font-family: 'News Cycle';}
+a{text-decoration: none;}
+label{display: block;color: blue;font-size: 18px;}
+.input-large{width: 300px;}
+#div-cadastrar-post{padding: 10px;background-color: #900;border: solid 1px #333;margin-top: 10px;width: 350px;}
+#div-cadastrar-post h3{color: #fff;}
+.listar-post{background-color: #efefef;padding: 5px;margin-bottom: 5px;border: solid 1px #ccc;}
+#form-atualizar-post{display: none;}
+ul{list-style: none;}
+#form-cadastrar-novo-produto{margin-top: 20px;}
+#input-medium{width: 100px;}
+#btn-quero-alterar-foto{margin-top: 5px;}

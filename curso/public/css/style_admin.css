@@ -1,0 +1,8 @@
+*{margin:0;padding:0;}
+#container{width:800px;margin: 0 auto;}
+label{display: block;color: #333;}
+.input-large{width: 300px;}
+#div-cadastrar-post{padding: 10px;background-color: #900;border: solid 1px #333;margin-top: 10px;width: 350px;}
+#div-cadastrar-post h3{color: #fff;}
+.listar-post{background-color: #efefef;padding: 5px;margin-bottom: 5px;border: solid 1px #ccc;}
+#form-atualizar-post{display: none;}

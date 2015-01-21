@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block titulo %}Primeira página do site{% endblock %}
+
+{% block menu %} {{ menu | raw }} {% endblock %}  
+
+{% block content %}
+
+	<div style="text-align: center" id="titulo" class="alert alert-info">Bem Vindo ao curso de Slim Framework com Twig</div>
+	{% if produtos | length > 0 %}
+	
+		{% for key,produto in produtos %}
+
+			<div class="produtos">
+				
+				<div class="foto-produto">
+					<img src=" {{ site_url() }}/{{ produto.tb_produto_foto }} " style="min-height: 160px;height: 160px; width: 200px;" class="img img-thumbnail">
+				</div>	
+
+				<div class="nome-produto">
+					{{ produto.tb_produto_nome | capitalize }}
+				</div>
+
+				<div class="preco-produto">
+					R$ {{ produto.tb_produto_preco | number_format(2, ',', '.') }}
+				</div>		
+
+				<div class="bt-produto">
+					<a href="/detalhes/{{ produto.tb_produto_slug }}" class="btn btn-primary">+Info</a>
+					<a href="{{ produto.tb_produto_link }}" target="_blank" class="btn btn-danger">Comprar</a>
+				</div>
+			</div>
+			
+		{% endfor %}
+
+	{% else %}
+		Nenhum produto cadastrado até o momento
+	{% endif %}
+
+{% endblock %}

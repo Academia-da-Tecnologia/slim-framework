@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block titulo %}Primeira página do site{% endblock %}
+
+{% block menu %} {{ menu | raw }} {% endblock %}  
+
+{% block content %}
+
+	<div id="foto-produto">
+		<img src="{{ site_url() }}/{{ produto.tb_produto_foto }}" width="190" height="150">
+	</div>
+	<div id="descricao-produto">
+		
+		{{ produto.tb_produto_descricao | raw }}
+
+	</div>
+
+{% endblock %}

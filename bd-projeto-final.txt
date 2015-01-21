@@ -1,0 +1,110 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.12
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Sep 19, 2014 at 03:38 PM
+-- Server version: 5.5.34
+-- PHP Version: 5.5.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `hotmart`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_administrador`
+--
+
+CREATE TABLE `tb_administrador` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb_administrador_nome` varchar(85) DEFAULT NULL,
+  `tb_administrador_email` varchar(65) DEFAULT NULL,
+  `tb_administrador_senha` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `tb_administrador`
+--
+
+INSERT INTO `tb_administrador` (`id`, `tb_administrador_nome`, `tb_administrador_email`, `tb_administrador_senha`) VALUES
+(1, 'Alexandre Cardoso', 'xandecar@hotmail.com', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_categoria`
+--
+
+CREATE TABLE `tb_categoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb_categoria_nome` varchar(85) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `tb_categoria`
+--
+
+INSERT INTO `tb_categoria` (`id`, `tb_categoria_nome`) VALUES
+(1, 'ProgramaÃ§Ã£o com slim framework'),
+(2, 'Ebooks de php'),
+(4, 'Adsense'),
+(5, 'Cursos');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_produto`
+--
+
+CREATE TABLE `tb_produto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb_produto_categoria` int(11) DEFAULT NULL,
+  `tb_produto_subcategoria` int(11) DEFAULT NULL,
+  `tb_produto_foto` varchar(100) DEFAULT NULL,
+  `tb_produto_preco` decimal(10,2) DEFAULT NULL,
+  `tb_produto_link` varchar(100) DEFAULT NULL,
+  `tb_produto_nome` varchar(85) DEFAULT NULL,
+  `tb_produto_descricao` text,
+  `tb_produto_slug` varchar(85) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `tb_produto`
+--
+
+INSERT INTO `tb_produto` (`id`, `tb_produto_categoria`, `tb_produto_subcategoria`, `tb_produto_foto`, `tb_produto_preco`, `tb_produto_link`, `tb_produto_nome`, `tb_produto_descricao`, `tb_produto_slug`) VALUES
+(19, 5, 14, 'public/fotos/produtos/540f9c0d0c10f.jpg', 210.00, 'teste de link', 'Curso de laravel', '<p>teste de curso.</p>', 'teste');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_subcategoria`
+--
+
+CREATE TABLE `tb_subcategoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tb_subcategoria_nome` varchar(85) DEFAULT NULL,
+  `tb_subcategoria_categoria` int(11) DEFAULT NULL,
+  `tb_subcategoria_slug` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `tb_subcategoria`
+--
+
+INSERT INTO `tb_subcategoria` (`id`, `tb_subcategoria_nome`, `tb_subcategoria_categoria`, `tb_subcategoria_slug`) VALUES
+(1, 'PHP', 1, 'php'),
+(2, 'Joomla', 1, 'joomla'),
+(3, 'Ruby', 1, 'ruby'),
+(7, 'VÃ­deos', 4, 'videos'),
+(13, 'ebooks de php', 2, 'ebooks'),
+(14, 'Laravel', 5, 'laravel');
